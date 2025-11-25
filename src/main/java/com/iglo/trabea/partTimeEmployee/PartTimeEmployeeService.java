@@ -3,6 +3,7 @@ package com.iglo.trabea.partTimeEmployee;
 import com.iglo.trabea.error.exception.ResourceNotFound;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeFormRequest;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeePlaceholderResponse;
+import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeContactResponse;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeSummaryResponse;
 import com.iglo.trabea.user.User;
 import lombok.RequiredArgsConstructor;
@@ -64,4 +65,11 @@ public class PartTimeEmployeeService {
 
         return partTimeMapper.toPartTimeEmployeeSummaryResponse(existingPartTimeEmployee);
     }
+
+    public PartTimeEmployeeContactResponse findEmployeeContactById(Integer id){
+        PartTimeEmployee partTimeEmployee = partTimeEmployeeRepository.findById(id)
+                .orElseThrow(()-> new ResourceNotFound("Part Time Employee with id "+id+" is not exist"));
+        return partTimeMapper.toPartTimeEmployeeSummaryForManagerResponse(partTimeEmployee);
+    }
+
 }

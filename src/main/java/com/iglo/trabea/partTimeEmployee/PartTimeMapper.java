@@ -1,6 +1,7 @@
 package com.iglo.trabea.partTimeEmployee;
 
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeePlaceholderResponse;
+import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeContactResponse;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeSummaryResponse;
 import org.springframework.stereotype.Component;
 
@@ -29,4 +30,15 @@ public class PartTimeMapper {
                 .onGoingEducation(partTimeEmployee.getOnGoingEducation())
                 .build();
     }
+
+    public PartTimeEmployeeContactResponse toPartTimeEmployeeSummaryForManagerResponse(PartTimeEmployee partTimeEmployee) {
+        return PartTimeEmployeeContactResponse.builder()
+                .fullname(partTimeEmployee.getFullName())
+                .personalEmail(partTimeEmployee.getPersonalEmail())
+                .workEmail(partTimeEmployee.getUser().getWorkEmail())
+                .phoneNumber(partTimeEmployee.getPhoneNumber())
+                .build();
+    }
+
+
 }

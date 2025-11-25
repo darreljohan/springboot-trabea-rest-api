@@ -2,6 +2,7 @@ package com.iglo.trabea.partTimeEmployee;
 
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeFormRequest;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeePlaceholderResponse;
+import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeContactResponse;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeSummaryResponse;
 
 import jakarta.validation.Valid;
@@ -39,4 +40,9 @@ public class PartTimeEmployeeController {
     public ResponseEntity<PartTimeEmployeeSummaryResponse> updateEmployee(@PathVariable Integer id, @RequestBody @Valid PartTimeEmployeeFormRequest partTimeEmployeeFormRequest) {
         return ResponseEntity.ok(partTimeEmployeeService.updatePartTimeEmployee(id, partTimeEmployeeFormRequest));
     }
-}
+
+    @GetMapping("contact/{id}")
+    public ResponseEntity<PartTimeEmployeeContactResponse> findPartTimeEmployeeContactById(@PathVariable Integer id){
+        return ResponseEntity.ok(partTimeEmployeeService.findEmployeeContactById(id));
+    }
+ }

@@ -23,7 +23,7 @@ public class WorkSchedule {
     private LocalDate workDate;
 
     @Column(name = "IsApproved")
-    private boolean isApproved;
+    private Boolean isApproved ;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ManagerId")
