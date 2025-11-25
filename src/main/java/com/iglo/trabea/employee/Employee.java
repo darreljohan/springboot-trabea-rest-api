@@ -21,7 +21,7 @@ public class Employee {
     @Column(name = "LastName", length = 50, nullable = false)
     private String lastName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "WorkEmail", referencedColumnName = "WorkEmail", nullable = false)
     private User user;
 }

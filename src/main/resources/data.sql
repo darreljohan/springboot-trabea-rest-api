@@ -33,7 +33,7 @@ SET IDENTITY_INSERT Employees OFF;
 
 SET IDENTITY_INSERT PartTimeEmployees ON;
 INSERT INTO PartTimeEmployees (Id, FirstName, LastName, PersonalEmail,
-								PersonalPhoneNumber, LastEducation,
+								PhoneNumber, LastEducation,
 								OnGoingEducation, JoinDate, WorkEmail)VALUES
 (1,		'Peter',			'Johnson',		'peter.johnson@gmail.com',
 		'1234567821',		'MASTER',

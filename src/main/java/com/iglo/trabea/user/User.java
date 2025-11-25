@@ -1,4 +1,6 @@
 package com.iglo.trabea.user;
+import com.iglo.trabea.employee.Employee;
+import com.iglo.trabea.partTimeEmployee.PartTimeEmployee;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -13,6 +15,12 @@ public class User {
 
     @Column(name = "Password", length = 255, nullable = false)
     private String password;
+
+    @OneToOne(fetch =  FetchType.LAZY, mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
+    private PartTimeEmployee partTimeInformation;
+
+    @OneToOne(fetch =  FetchType.LAZY, mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
+    private Employee employee;
 }
 
 

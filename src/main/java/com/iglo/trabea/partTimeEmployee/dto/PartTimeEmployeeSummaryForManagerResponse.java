@@ -1,17 +1,13 @@
 package com.iglo.trabea.partTimeEmployee.dto;
 
+import com.iglo.trabea.education.Education;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @Data @Builder
-public class PartTimeEmployeeSummaryResponse {
-    private Integer id;
+public class PartTimeEmployeeSummaryForManagerResponse {
     private String fullname;
     private String privateEmail;
     private String workEmail;
     private String phoneNumber;
-    private LocalDate joinDate;
 }

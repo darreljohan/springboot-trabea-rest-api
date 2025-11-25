@@ -1,4 +1,4 @@
-package com.iglo.trabea.workschedules;
+package com.iglo.trabea.workSchedules;
 
 import com.iglo.trabea.employee.Employee;
 import com.iglo.trabea.partTimeEmployee.PartTimeEmployee;

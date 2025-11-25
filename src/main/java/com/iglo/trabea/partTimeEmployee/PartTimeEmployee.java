@@ -27,8 +27,8 @@ public class PartTimeEmployee {
     @Column(name = "PersonalEmail", length = 100, nullable = false, unique = true)
     private String personalEmail;
 
-    @Column(name = "PersonalPhoneNumber", length = 20, nullable = false, unique = true)
-    private String personalPhoneNumber;
+    @Column(name = "phoneNumber", length = 20, nullable = false, unique = true)
+    private String phoneNumber;
 
     @Column(name = "LastEducation", length = 50, nullable = false)
     @Enumerated(EnumType.STRING)
@@ -44,8 +44,12 @@ public class PartTimeEmployee {
     @Column(name = "ResignDate")
     private LocalDateTime resignDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "WorkEmail", nullable = false)
     private User user;
+
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
 }
 
