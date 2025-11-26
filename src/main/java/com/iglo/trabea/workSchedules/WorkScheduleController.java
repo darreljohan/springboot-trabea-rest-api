@@ -1,12 +1,12 @@
 package com.iglo.trabea.workSchedules;
 
+import com.iglo.trabea.workSchedules.dto.ScheduleApprovalResponse;
 import com.iglo.trabea.workSchedules.dto.ScheduleFormRequest;
 import com.iglo.trabea.workSchedules.dto.ScheduleResponse;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +32,17 @@ public class WorkScheduleController {
     }
 
     @GetMapping("/requests")
-    public ResponseEntity<Page<ScheduleResponse>> findAllRequestWorkSchedules(@PageableDefault Pageable pageable) {
-        return ResponseEntity.ok(workSchedulesService.findAllScheduleRequests(pageable));
+    public ResponseEntity<Page<ScheduleResponse>> findAllWorkSchedulesRequest(@PageableDefault Pageable pageable) {
+        return ResponseEntity.ok(workSchedulesService.findAllWorkScheduleRequests(pageable));
+    }
+
+    @PatchMapping("/requests/{requestId}/approve")
+    public  ResponseEntity<ScheduleApprovalResponse> approveWorkScheduleRequest(@PathVariable Integer requestId) {
+        return ResponseEntity.ok(workSchedulesService.approveWorkScheduleRequest(requestId, 1));
+    }
+
+    @PatchMapping("/requests/{requestId}/reject")
+    public ResponseEntity<ScheduleApprovalResponse> rejectWorkScheduleRequest(@PathVariable Integer requestId) {
+        return ResponseEntity.ok(workSchedulesService.rejectWorkScheduleRequest(requestId, 1));
     }
 }

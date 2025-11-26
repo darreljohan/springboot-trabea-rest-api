@@ -66,7 +66,7 @@ public class PartTimeEmployeeService {
         return partTimeMapper.toPartTimeEmployeeSummaryResponse(existingPartTimeEmployee);
     }
 
-    public PartTimeEmployeeContactResponse findEmployeeContactById(Integer id){
+    public PartTimeEmployeeContactResponse findPartTimeEmployeeContactById(Integer id){
         PartTimeEmployee partTimeEmployee = partTimeEmployeeRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFound("Part Time Employee with id "+id+" is not exist"));
         return partTimeMapper.toPartTimeEmployeeSummaryForManagerResponse(partTimeEmployee);

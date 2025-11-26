@@ -43,6 +43,6 @@ public class PartTimeEmployeeController {
 
     @GetMapping("contact/{id}")
     public ResponseEntity<PartTimeEmployeeContactResponse> findPartTimeEmployeeContactById(@PathVariable Integer id){
-        return ResponseEntity.ok(partTimeEmployeeService.findEmployeeContactById(id));
+        return ResponseEntity.ok(partTimeEmployeeService.findPartTimeEmployeeContactById(id));
     }
  }

@@ -24,5 +24,9 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "WorkEmail", referencedColumnName = "WorkEmail", nullable = false)
     private User user;
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
 

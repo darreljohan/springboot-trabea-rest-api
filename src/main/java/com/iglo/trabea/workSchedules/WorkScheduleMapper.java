@@ -1,5 +1,6 @@
 package com.iglo.trabea.workSchedules;
 
+import com.iglo.trabea.workSchedules.dto.ScheduleApprovalResponse;
 import com.iglo.trabea.workSchedules.dto.ScheduleResponse;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,17 @@ public class WorkScheduleMapper {
                 .partTimeEmployeeFullname(schedule.getPartTimeEmployee().getFullName())
                 .scheduleDate(schedule.getWorkDate())
                 .shiftType(schedule.getWorkShift().getId())
+                .build();
+    }
+
+    public ScheduleApprovalResponse toScheduleApprovalResponse(WorkSchedule schedule) {
+        return ScheduleApprovalResponse.builder()
+                .EmployeeName(schedule.getPartTimeEmployee().getFullName())
+                .workDate(schedule.getWorkDate())
+                .isApproved(schedule.getIsApproved())
+                .approvedBy(schedule.getManager().getFullName())
+                .startTime(schedule.getWorkShift().getStartTime())
+                .endTime(schedule.getWorkShift().getEndTime())
                 .build();
     }
 }
