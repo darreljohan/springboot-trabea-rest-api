@@ -3,6 +3,7 @@ package com.iglo.trabea.workSchedules;
 import com.iglo.trabea.employee.Employee;
 import com.iglo.trabea.employee.EmployeeRepository;
 import com.iglo.trabea.error.exception.ResourceNotFound;
+import com.iglo.trabea.error.exception.WorkScheduleRequestConflict;
 import com.iglo.trabea.partTimeEmployee.PartTimeEmployee;
 import com.iglo.trabea.partTimeEmployee.PartTimeEmployeeRepository;
 import com.iglo.trabea.workSchedules.dto.ScheduleApprovalResponse;
@@ -12,6 +13,7 @@ import com.iglo.trabea.workSchedules.validation.WorkScheduleValidator;
 import com.iglo.trabea.workshifts.WorkShift;
 import com.iglo.trabea.workshifts.WorkShiftRepository;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.jdbc.Work;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -60,7 +62,7 @@ public class WorkSchedulesService {
                  scheduleFormRequest.getRequestedWorkDate(),
                  ApprovalStatus.REJECTED
          )){
-             throw new IllegalArgumentException("Work schedule request already exists for the given date and shift");
+             throw new WorkScheduleRequestConflict("Work schedule request already exists for the given date and shift with Pending or Approved status");
          }
 
          WorkSchedule workSchedule = WorkSchedule.builder()
