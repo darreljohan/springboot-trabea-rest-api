@@ -65,29 +65,29 @@ INSERT INTO WorkShifts(Id, StartTime, EndTime) VALUES
 INSERT INTO WorkSchedules(WorkDate, WorkShiftId,
 	ManagerId,		PartTimeEmployeeId, IsApproved) VALUES
 (GETDATE(),						1,
-	1,							1,		1),
+	1,							1,		'APPROVED'),
 (GETDATE(),						2,
-	1,							1,		1),
+	1,							1,		'APPROVED'),
 (GETDATE(),						3,
-	1,							2,		1),
+	1,							2,		'APPROVED'),
 (GETDATE(),						4,
-	1,							2,		1),
+	1,							2,		'APPROVED'),
 (DATEADD(DAY, 1, GETDATE()),	3,
-	1,							2,		1),
+	1,							2,		'APPROVED'),
 (DATEADD(DAY, 1, GETDATE()),	4,
-	1,							2,		1),
+	1,							2,		'APPROVED'),
 (DATEADD(DAY, 4, GETDATE()),	1,
-	3,							3,		1),
+	3,							3,		'APPROVED'),
 (DATEADD(DAY, 4, GETDATE()),	1,
-	3,							4,		1),
+	3,							4,		'APPROVED'),
 (DATEADD(DAY, 4, GETDATE()),	2,
-	3,							4,		1),
+	3,							4,		'APPROVED'),
 (DATEADD(DAY, 4, GETDATE()),	2,
-	3,							5,		0),							--disapproved
+	3,							5,		'REJECTED'),							--disapproved
 (DATEADD(DAY, 4, GETDATE()),	3,
-	3,							5,		1),
+	3,							5,		'APPROVED'),
 (DATEADD(DAY, 4, GETDATE()),	4,
-	3,							5,		1)
+	3,							5,		'APPROVED')
 
 --contoh kasus yang belum di cek sama manager:
 INSERT INTO WorkSchedules

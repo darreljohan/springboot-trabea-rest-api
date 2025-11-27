@@ -19,7 +19,7 @@ public class UserRole {
     @JoinColumn(name = "UserId", nullable = false)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("roleId")
     @JoinColumn(name = "RoleId", nullable = false)
     private Role role;

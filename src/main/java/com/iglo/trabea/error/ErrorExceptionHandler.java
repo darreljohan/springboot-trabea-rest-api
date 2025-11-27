@@ -4,6 +4,8 @@ package com.iglo.trabea.error;
 import com.iglo.trabea.error.exception.DeletionConflict;
 import com.iglo.trabea.error.exception.DuplicateNameException;
 import com.iglo.trabea.error.exception.ResourceNotFound;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.core.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -55,9 +57,22 @@ public class ErrorExceptionHandler {
         return ResponseEntity.status(httpStatus).body(errorMessageResponse);
     }
 
+    @ExceptionHandler(DataAccessException.class)
+    public ResponseEntity<ErrorMessageResponse<Object>> handleDataAccessException(DataAccessException e){
+        HttpStatus httpStatus = HttpStatus.CONFLICT;
+
+        ErrorMessageResponse<Object> errorMessageResponse = ErrorMessageResponse.builder()
+                .status(httpStatus)
+                .message("Data Access Exception")
+                .errors(e.getMostSpecificCause().getLocalizedMessage())
+                .build();
+
+        return ResponseEntity.status(httpStatus).body(errorMessageResponse);
+    }
+
     @ExceptionHandler(PropertyReferenceException.class)
     public ResponseEntity<ErrorMessageResponse<Object>> handlePropertyReferenceException(PropertyReferenceException e){
-        HttpStatus httpStatus = HttpStatus.CONFLICT;
+        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
         ErrorMessageResponse<Object> errorMessageResponse = ErrorMessageResponse.builder()
                 .status(httpStatus)
                 .message("Property Reference Error" )
@@ -96,7 +111,7 @@ public class ErrorExceptionHandler {
         HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
         ErrorMessageResponse<Object> errorMessageResponse = ErrorMessageResponse.builder()
                 .status(httpStatus)
-                .message("JSON Malformed: " + e.getCause().getMessage())
+                .message("HTTP Message Not Readable")
                 .errors(e.getMostSpecificCause().getLocalizedMessage())
                 .build();
 
@@ -113,7 +128,7 @@ public class ErrorExceptionHandler {
 
         //<Map<String, String>>builder() 
         ErrorMessageResponse<Map<String, String>> errorMessageResponse = ErrorMessageResponse.<Map<String, String>>builder().status(httpStatus)
-                .message(e.getLocalizedMessage())
+                .message("Method Argument Not Valid")
                 .errors(errorsMap)
                 .build();
 

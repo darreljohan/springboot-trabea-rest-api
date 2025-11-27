@@ -6,6 +6,7 @@ import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeePlaceholderResponse;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeContactResponse;
 import com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeSummaryResponse;
 import com.iglo.trabea.user.User;
+import com.iglo.trabea.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,10 +14,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class PartTimeEmployeeService {
+    private final UserRepository userRepository;
     private final PartTimeEmployeeRepository partTimeEmployeeRepository;
     private final PartTimeMapper partTimeMapper;
 
@@ -29,9 +32,17 @@ public class PartTimeEmployeeService {
         return partTimeEmployeeRepository.findAll(pageable).map(partTimeMapper::toPartTimeEmployeeSummaryResponse);
     }
 
+    @Transactional
     public PartTimeEmployeeSummaryResponse addPartTimeEmployee(PartTimeEmployeeFormRequest partTimeEmployeeFormRequest){
-       User user = User.builder()
-               .workEmail(partTimeEmployeeFormRequest.getEmailPrefix()+"@trabea.co.id")
+        String email = partTimeEmployeeFormRequest.getEmailPrefix()+"@trabea.co.id";
+
+        if(userRepository.existsByWorkEmail(email)){
+            String hash = Integer.toHexString(UUID.randomUUID().hashCode()).substring(0, 4);
+            email = partTimeEmployeeFormRequest.getEmailPrefix()+"_"+hash;
+        }
+
+        User user = User.builder()
+               .workEmail(email)
                .password("Trabea123")
                .build();
 

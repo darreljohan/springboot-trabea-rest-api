@@ -20,7 +20,7 @@ public class WorkScheduleMapper {
         return ScheduleApprovalResponse.builder()
                 .EmployeeName(schedule.getPartTimeEmployee().getFullName())
                 .workDate(schedule.getWorkDate())
-                .isApproved(schedule.getIsApproved())
+                .approvalStatus(schedule.getApprovalStatus())
                 .approvedBy(schedule.getManager().getFullName())
                 .startTime(schedule.getWorkShift().getStartTime())
                 .endTime(schedule.getWorkShift().getEndTime())

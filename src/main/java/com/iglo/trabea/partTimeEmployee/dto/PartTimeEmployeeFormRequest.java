@@ -23,7 +23,9 @@ public class PartTimeEmployeeFormRequest {
     @NotNull @NotBlank @Size(min = 1, max = 20)
     private String phoneNumber;
 
+    @NotNull
     private Education lastEducation;
+
     private Education onGoingEducation;
 
     public String getEmailPrefix() {

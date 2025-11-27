@@ -8,8 +8,10 @@ import com.iglo.trabea.partTimeEmployee.PartTimeEmployeeRepository;
 import com.iglo.trabea.workSchedules.dto.ScheduleApprovalResponse;
 import com.iglo.trabea.workSchedules.dto.ScheduleFormRequest;
 import com.iglo.trabea.workSchedules.dto.ScheduleResponse;
+import com.iglo.trabea.workSchedules.validation.WorkScheduleValidator;
 import com.iglo.trabea.workshifts.WorkShift;
 import com.iglo.trabea.workshifts.WorkShiftRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -21,25 +23,15 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
 @Service
-
+@RequiredArgsConstructor
 public class WorkSchedulesService {
-     private WorkScheduleMapper workScheduleMapper;
-     private WorkSchedulesRepository workSchedulesRepository;
-     private PartTimeEmployeeRepository partTimeEmployeeRepository;
-    private WorkShiftRepository workShiftRepository;
-    private EmployeeRepository employeeRepository;
+     private final WorkScheduleMapper workScheduleMapper;
+     private final WorkSchedulesRepository workSchedulesRepository;
+     private final PartTimeEmployeeRepository partTimeEmployeeRepository;
+    private final WorkShiftRepository workShiftRepository;
+    private final EmployeeRepository employeeRepository;
+    private final WorkScheduleValidator workScheduleValidator;
 
-        public WorkSchedulesService(WorkScheduleMapper workScheduleMapper,
-                                    WorkSchedulesRepository workSchedulesRepository,
-                                    PartTimeEmployeeRepository partTimeEmployeeRepository,
-                                    WorkShiftRepository workShiftRepository,
-                                    EmployeeRepository employeeRepository) {
-            this.workScheduleMapper = workScheduleMapper;
-            this.workSchedulesRepository = workSchedulesRepository;
-            this.partTimeEmployeeRepository = partTimeEmployeeRepository;
-            this.workShiftRepository = workShiftRepository;
-            this.employeeRepository = employeeRepository;
-        }
 
     public List<ScheduleResponse> findSchedulesByWeek(boolean isNextWeek) {
           LocalDate today = LocalDate.now();
@@ -59,48 +51,53 @@ public class WorkSchedulesService {
      }
 
      @Transactional
-     public ScheduleResponse addRequestWorkSchedule(Integer partTimeId, ScheduleFormRequest scheduleFormRequest) {
-        //TODO :Change using credentials of the authenticatae user
-        PartTimeEmployee partTimeEmployee = partTimeEmployeeRepository.findById(partTimeId)
-                 .orElseThrow(() -> new ResourceNotFound("Part-time employee not found"));
-
+     public ScheduleResponse addRequestWorkSchedule(PartTimeEmployee partTimeEmployee, ScheduleFormRequest scheduleFormRequest) {
          WorkShift workShift = workShiftRepository.findById(scheduleFormRequest.getShiftId()).orElseThrow(()-> new ResourceNotFound("Work shift not found"));
+
+         if(workSchedulesRepository.existsByPartTimeEmployee_IdAndWorkShift_IdAndWorkDateAndApprovalStatusNot(
+                 partTimeEmployee.getId(),
+                 workShift.getId(),
+                 scheduleFormRequest.getRequestedWorkDate(),
+                 ApprovalStatus.REJECTED
+         )){
+             throw new IllegalArgumentException("Work schedule request already exists for the given date and shift");
+         }
 
          WorkSchedule workSchedule = WorkSchedule.builder()
                   .workDate(scheduleFormRequest.getRequestedWorkDate())
-                  .isApproved(null)
                   .partTimeEmployee(partTimeEmployee)
-                 . workShift(workShift)
+                  .workShift(workShift)
+                 .approvalStatus(ApprovalStatus.PENDING)
                   .build();
 
          return workScheduleMapper.toScheduleResponse(workSchedulesRepository.save(workSchedule));
      }
 
      public Page<ScheduleResponse> findAllWorkScheduleRequests(Pageable pageable) {
-            return workSchedulesRepository.findByIsApprovedNullAndManagerNull(pageable)
+            return workSchedulesRepository.findByApprovalStatusPendingAndManagerNull(pageable)
                     .map(workScheduleMapper::toScheduleResponse);
      }
 
     @Transactional
-     public ScheduleApprovalResponse approveWorkScheduleRequest(Integer scheduleId, Integer managerId) {
+     public ScheduleApprovalResponse approveWorkScheduleRequest(Integer scheduleId, Employee employee) {
           WorkSchedule workSchedule = workSchedulesRepository.findById(scheduleId)
                   .orElseThrow(() -> new ResourceNotFound("Work schedule request not found with id: " + scheduleId));
 
-          //TODO : Replace with authenticated user
-        Employee employee = employeeRepository.findById(managerId).orElseThrow(() -> new ResourceNotFound("Manager not found with id: " + managerId));
-          workSchedule.setIsApproved(true);
+          workScheduleValidator.validateDailyWorkScheduleRequest(workSchedule.getPartTimeEmployee().getId(), workSchedule.getWorkDate(), workSchedule.getWorkShift());
+          workScheduleValidator.validateWeeklyWorkScheduleRequest(workSchedule.getPartTimeEmployee().getId(), workSchedule.getWorkDate());
+
+          workSchedule.setApprovalStatus(ApprovalStatus.APPROVED);
           workSchedule.setManager(employee);
 
           return workScheduleMapper.toScheduleApprovalResponse(workSchedule);
      }
 
-     public ScheduleApprovalResponse rejectWorkScheduleRequest(Integer scheduleId, Integer managerId) {
+     public ScheduleApprovalResponse rejectWorkScheduleRequest(Integer scheduleId, Employee employee) {
           WorkSchedule workSchedule = workSchedulesRepository.findById(scheduleId)
                   .orElseThrow(() -> new ResourceNotFound("Work schedule request not found with id: " + scheduleId));
 
-          //TODO : Replace with authenticated user
-          Employee employee = employeeRepository.findById(managerId).orElseThrow(() -> new ResourceNotFound("Manager not found with id: " + managerId));
-          workSchedule.setIsApproved(false);
+
+          workSchedule.setApprovalStatus(ApprovalStatus.REJECTED);
           workSchedule.setManager(employee);
 
           return workScheduleMapper.toScheduleApprovalResponse(workSchedule);

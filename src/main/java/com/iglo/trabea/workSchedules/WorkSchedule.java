@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Set;
 
 @Entity
 @Table(name = "WorkSchedules")
@@ -23,8 +22,9 @@ public class WorkSchedule {
     @Column(name = "WorkDate", nullable = false)
     private LocalDate workDate;
 
-    @Column(name = "IsApproved")
-    private Boolean isApproved ;
+    @Column(name = "IsApproved", columnDefinition = "VARCHAR(20) DEFAULT 'PENDING'")
+    @Enumerated(EnumType.STRING)
+    private ApprovalStatus approvalStatus = ApprovalStatus.PENDING;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ManagerId")

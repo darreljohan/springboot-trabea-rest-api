@@ -1,8 +1,11 @@
 package com.iglo.trabea.user;
 import com.iglo.trabea.employee.Employee;
 import com.iglo.trabea.partTimeEmployee.PartTimeEmployee;
+import com.iglo.trabea.userRole.UserRole;
 import lombok.*;
 import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 @Table(name = "Users")
@@ -21,6 +24,9 @@ public class User {
 
     @OneToOne(fetch =  FetchType.LAZY, mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL)
     private Employee employee;
+    
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    private Set<UserRole> userRoles;
 }
 
 
