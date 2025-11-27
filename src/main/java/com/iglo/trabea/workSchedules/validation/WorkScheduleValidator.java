@@ -1,5 +1,6 @@
 package com.iglo.trabea.workSchedules.validation;
 
+import com.iglo.trabea.error.exception.WorkScheduleStatePersistConflict;
 import com.iglo.trabea.utils.WeekRange;
 import com.iglo.trabea.workSchedules.ApprovalStatus;
 import com.iglo.trabea.workSchedules.WorkSchedule;
@@ -29,7 +30,7 @@ public class WorkScheduleValidator {
     public void validateWeeklyWorkScheduleRequest(Integer partTimeEmployeeId, LocalDate requestedDate) {
         WeekRange weekRange = new WeekRange(requestedDate);
        if(workSchedulesRepository.countByPartTimeEmployee_IdAndWorkDateBetweenAndApprovalStatus(partTimeEmployeeId, weekRange.getStartWeek(), weekRange.getEndWeek(), ApprovalStatus.APPROVED)>=5){
-           throw new IllegalArgumentException("Exceeding maximun shift per week");
+           throw new WorkScheduleStatePersistConflict("Exceeding maximun shift per week");
        };
 
     }
@@ -37,7 +38,7 @@ public class WorkScheduleValidator {
     public void maxShiftExceeded( List<WorkSchedule> currentEmployeeWorkSchedule, Integer partTimeEmployeeId, LocalDate requestedDate) {
         int maxShiftsPerDay = 2; // Business rule: max 2 shifts per day
         if (currentEmployeeWorkSchedule.size() >= maxShiftsPerDay) {
-            throw new IllegalArgumentException("Max shifts per day (" + maxShiftsPerDay + ") already reached for part-time employee ID: " + partTimeEmployeeId);
+            throw new WorkScheduleStatePersistConflict("Max shifts per day (" + maxShiftsPerDay + ") already reached for part-time employee ID: " + partTimeEmployeeId);
         }
     }
 
@@ -57,7 +58,7 @@ public class WorkScheduleValidator {
             boolean overlap = newStart.isBefore(existingEnd) && existingStart.isBefore(newEnd)
                     && !newEnd.equals(existingStart) && !existingEnd.equals(newStart);
             if (overlap) {
-                throw new IllegalArgumentException("New shift " + format(newStart, newEnd) + " overlaps with existing shift " + format(existingStart, existingEnd));
+                throw new WorkScheduleStatePersistConflict("New shift " + format(newStart, newEnd) + " overlaps with existing shift " + format(existingStart, existingEnd));
             }
 
             boolean contiguousAfter = existingEnd.equals(newStart);
@@ -68,7 +69,7 @@ public class WorkScheduleValidator {
         }
 
         if (currentEmployeeWorkSchedule.size() == 1 && !foundContiguous) {
-            throw new IllegalArgumentException("Second shift must be contiguous with existing shift for date " + requestedDate);
+            throw new WorkScheduleStatePersistConflict("Second shift must be contiguous with existing shift for date " + requestedDate);
         }
     }
 

@@ -1,10 +1,7 @@
 package com.iglo.trabea.error;
 
 
-import com.iglo.trabea.error.exception.DeletionConflict;
-import com.iglo.trabea.error.exception.DuplicateNameException;
-import com.iglo.trabea.error.exception.ResourceNotFound;
-import com.iglo.trabea.error.exception.WorkScheduleRequestConflict;
+import com.iglo.trabea.error.exception.*;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.core.PropertyReferenceException;
@@ -64,6 +61,18 @@ public class ErrorExceptionHandler {
         ErrorMessageResponse<Object> errorMessageResponse = ErrorMessageResponse.builder()
                 .status(httpStatus)
                 .message("Work Schedule Request Conflict" )
+                .errors(e.getMessage())
+                .build();
+
+        return ResponseEntity.status(httpStatus).body(errorMessageResponse);
+    }
+
+    @ExceptionHandler(WorkScheduleStatePersistConflict.class)
+    public ResponseEntity<ErrorMessageResponse<Object>> handleWorkScheduleRequestConflict(WorkScheduleStatePersistConflict e){
+        HttpStatus httpStatus = HttpStatus.CONFLICT;
+        ErrorMessageResponse<Object> errorMessageResponse = ErrorMessageResponse.builder()
+                .status(httpStatus)
+                .message("Work Schedule State Persist Conflict" )
                 .errors(e.getMessage())
                 .build();
 
