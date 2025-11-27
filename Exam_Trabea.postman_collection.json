@@ -1,0 +1,3346 @@
+{
+	"info": {
+		"_postman_id": "7afd5d53-7cc1-4ade-abaa-27f964611c7f",
+		"name": "Exam_Trabea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50035078",
+		"_collection_link": "https://darreljohan-4049802.postman.co/workspace/Darrel-Johan's-Workspace~3b09aea2-d077-4b6c-89dc-d1ffd9a560cd/collection/50035078-7afd5d53-7cc1-4ade-abaa-27f964611c7f?action=share&source=collection_link&creator=50035078"
+	},
+	"item": [
+		{
+			"name": "Work Schedule",
+			"item": [
+				{
+					"name": "Get Weekly Schedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWguZGFuaXNAdHJhYmVhLmNvLmlkIiwiaXNzIjoiVHJhYmVhIiwiaWF0IjoxNzY0MjExMTc0LCJleHAiOjE3NjQyOTc1NzQsInJvbGUiOiJNYW5hZ2VyIiwid29ya0VtYWlsIjoibXVoLmRhbmlzQHRyYWJlYS5jby5pZCJ9.gy_kUUI1Hrso62B3i6ceWQuFHptWMIADdDgACSCWM_E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/work-schedules",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-schedules"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Find All Work Schedule of Next Week",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules?isNextWeek=true",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									],
+									"query": [
+										{
+											"key": "isNextWeek",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:42:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"partTimeEmployeeFullname\": \"Alan Conway\",\n        \"partTimeEmployeeId\": 3,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Ali Jonathan\",\n        \"partTimeEmployeeId\": 4,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Ali Jonathan\",\n        \"partTimeEmployeeId\": 4,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Robert Tan\",\n        \"partTimeEmployeeId\": 5,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Robert Tan\",\n        \"partTimeEmployeeId\": 5,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Robert Tan\",\n        \"partTimeEmployeeId\": 5,\n        \"scheduleDate\": \"2025-12-01\",\n        \"shiftType\": 4\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Alan Conway\",\n        \"partTimeEmployeeId\": 3,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Alan Conway\",\n        \"partTimeEmployeeId\": 3,\n        \"scheduleDate\": \"2025-12-04\",\n        \"shiftType\": 4\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Alan Conway\",\n        \"partTimeEmployeeId\": 3,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Alan Conway\",\n        \"partTimeEmployeeId\": 3,\n        \"scheduleDate\": \"2025-12-06\",\n        \"shiftType\": 4\n    }\n]"
+						},
+						{
+							"name": "200 Find All Work Schedule of This Week",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:43:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-11-27\",\n        \"shiftType\": 1\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 1,\n        \"scheduleDate\": \"2025-11-27\",\n        \"shiftType\": 2\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-11-27\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-11-27\",\n        \"shiftType\": 4\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-11-28\",\n        \"shiftType\": 3\n    },\n    {\n        \"partTimeEmployeeFullname\": \"Mocked_Edited Mocked\",\n        \"partTimeEmployeeId\": 2,\n        \"scheduleDate\": \"2025-11-28\",\n        \"shiftType\": 4\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Request Work Schedule",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlci5qb2huc29uQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMTUwMSwiZXhwIjoxNzY0Mjk3OTAxLCJyb2xlIjoiUGFydFRpbWVyIiwid29ya0VtYWlsIjoicGV0ZXIuam9obnNvbkB0cmFiZWEuY28uaWQifQ.q4HiZ7AAN4ePMF9U1-BfgtJ47FFjQHk37lapEeZUU0Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-12-02\",\r\n        \"shiftId\":\"3\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/work-schedules",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-schedules"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with All Valid Field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-12-04\",\r\n        \"shiftId\":\"3\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:02:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"partTimeEmployeeFullname\": \"Peter Johnson\",\n    \"partTimeEmployeeId\": 1,\n    \"scheduleDate\": \"2025-12-04\",\n    \"shiftType\": 3\n}"
+						},
+						{
+							"name": "400 with Requested Work Date in Weekend",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-11-29\",\r\n        \"shiftId\":\"2\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:45:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"requestedWorkDate\": \"Requested Work Schedule must be between Monday and Friday\"\n    },\n    \"message\": \"Method Argument Not Valid\",\n    \"status\": \"400 BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "400 with Requested Work Date in Past",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-11-24\",\r\n        \"shiftId\":\"2\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:46:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"requestedWorkDate\": \"must be a date in the present or in the future\"\n    },\n    \"message\": \"Method Argument Not Valid\",\n    \"status\": \"400 BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "409 with Existed Work Schedules in Approved Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-11-27\",\r\n        \"shiftId\":\"1\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:00:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Work schedule request already exists for the given date and shift with Pending or Approved status\",\n    \"message\": \"Work Schedule Request Conflict\",\n    \"status\": \"409 CONFLICT\"\n}"
+						},
+						{
+							"name": "409 wit Existed Work Schedules in Pending Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"requestedWorkDate\":\"2025-12-04\",\r\n        \"shiftId\":\"1\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:01:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Work schedule request already exists for the given date and shift with Pending or Approved status\",\n    \"message\": \"Work Schedule Request Conflict\",\n    \"status\": \"409 CONFLICT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Work Schedule Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWguZGFuaXNAdHJhYmVhLmNvLmlkIiwiaXNzIjoiVHJhYmVhIiwiaWF0IjoxNzY0MjExMTc0LCJleHAiOjE3NjQyOTc1NzQsInJvbGUiOiJNYW5hZ2VyIiwid29ya0VtYWlsIjoibXVoLmRhbmlzQHRyYWJlYS5jby5pZCJ9.gy_kUUI1Hrso62B3i6ceWQuFHptWMIADdDgACSCWM_E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/work-schedules/requests",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-schedules",
+								"requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with No Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:06:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"partTimeEmployeeFullname\": \"Peter Johnson\",\n            \"partTimeEmployeeId\": 1,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 1\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Peter Johnson\",\n            \"partTimeEmployeeId\": 1,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 2\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Patra Tobias\",\n            \"partTimeEmployeeId\": 2,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 1\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Patra Tobias\",\n            \"partTimeEmployeeId\": 2,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 2\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Patra Tobias\",\n            \"partTimeEmployeeId\": 2,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 3\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Alan Conway\",\n            \"partTimeEmployeeId\": 3,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 3\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Alan Conway\",\n            \"partTimeEmployeeId\": 3,\n            \"scheduleDate\": \"2025-12-04\",\n            \"shiftType\": 4\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Peter Johnson\",\n            \"partTimeEmployeeId\": 1,\n            \"scheduleDate\": \"2025-12-06\",\n            \"shiftType\": 1\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Peter Johnson\",\n            \"partTimeEmployeeId\": 1,\n            \"scheduleDate\": \"2025-12-06\",\n            \"shiftType\": 2\n        },\n        {\n            \"partTimeEmployeeFullname\": \"Patra Tobias\",\n            \"partTimeEmployeeId\": 2,\n            \"scheduleDate\": \"2025-12-06\",\n            \"shiftType\": 1\n        }\n    ],\n    \"page\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"totalElements\": 15,\n        \"totalPages\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Approve Work Schedule Request by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWguZGFuaXNAdHJhYmVhLmNvLmlkIiwiaXNzIjoiVHJhYmVhIiwiaWF0IjoxNzY0MjExMTc0LCJleHAiOjE3NjQyOTc1NzQsInJvbGUiOiJNYW5hZ2VyIiwid29ya0VtYWlsIjoibXVoLmRhbmlzQHRyYWJlYS5jby5pZCJ9.gy_kUUI1Hrso62B3i6ceWQuFHptWMIADdDgACSCWM_E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/work-schedules/requests/31/approve",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-schedules",
+								"requests",
+								"31",
+								"approve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with Valid Approval State",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests/13/approve",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests",
+										"13",
+										"approve"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:13:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"EmployeeName\": \"Peter Johnson\",\n    \"approvalStatus\": \"APPROVED\",\n    \"approvedBy\": \"Muh Danis\",\n    \"endTime\": \"12:00:00\",\n    \"startTime\": \"08:00:00\",\n    \"workDate\": \"2025-12-04\"\n}"
+						},
+						{
+							"name": "409 with Requested Work Shift not continuous with Exist Date Shift",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests/27/approve",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests",
+										"27",
+										"approve"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:19:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Second shift must be contiguous with existing shift for date 2025-12-04\",\n    \"message\": \"Work Schedule State Persist Conflict\",\n    \"status\": \"409 CONFLICT\"\n}"
+						},
+						{
+							"name": "409 with Requested Work Shift exceed Daily Limit",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests/27/approve",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests",
+										"27",
+										"approve"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:21:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Max shifts per day (2) already reached for part-time employee ID: 1\",\n    \"message\": \"Work Schedule State Persist Conflict\",\n    \"status\": \"409 CONFLICT\"\n}"
+						},
+						{
+							"name": "409 with Requested Work Shift Exceed Weekly Limit",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests/31/approve",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests",
+										"31",
+										"approve"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:23:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Exceeding maximun shift per week\",\n    \"message\": \"Work Schedule State Persist Conflict\",\n    \"status\": \"409 CONFLICT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reject Work Schedule Request by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWguZGFuaXNAdHJhYmVhLmNvLmlkIiwiaXNzIjoiVHJhYmVhIiwiaWF0IjoxNzY0MjExMTc0LCJleHAiOjE3NjQyOTc1NzQsInJvbGUiOiJNYW5hZ2VyIiwid29ya0VtYWlsIjoibXVoLmRhbmlzQHRyYWJlYS5jby5pZCJ9.gy_kUUI1Hrso62B3i6ceWQuFHptWMIADdDgACSCWM_E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/work-schedules/requests/31/reject",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-schedules",
+								"requests",
+								"31",
+								"reject"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with All Valid Params",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/work-schedules/requests/31/reject",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-schedules",
+										"requests",
+										"31",
+										"reject"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:25:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"EmployeeName\": \"Peter Johnson\",\n    \"approvalStatus\": \"REJECTED\",\n    \"approvedBy\": \"Muh Danis\",\n    \"endTime\": \"20:00:00\",\n    \"startTime\": \"16:00:00\",\n    \"workDate\": \"2025-12-02\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Part Time Employee",
+			"item": [
+				{
+					"name": "Find All PartTimer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbGRpLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDE0MzkyMCwiZXhwIjoxNzY0MjMwMzIwLCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFsZGkuZGFuaXNAdHJhYmVhLmNvLmlkIn0.93OupQzu5VbLwzpp81-LSNOpxXJ_Z97n3Ux0xh6EV98",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/part-timer?sort=joinDate",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "joinDate"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 without Any Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:48:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"fullname\": \"Peter Johnson\",\n            \"id\": 1,\n            \"joinDate\": \"2024-11-26\",\n            \"phoneNumber\": \"1234567821\",\n            \"privateEmail\": \"peter.johnson@gmail.com\",\n            \"workEmail\": \"peter.johnson@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Patra Tobias\",\n            \"id\": 2,\n            \"joinDate\": \"2023-11-26\",\n            \"phoneNumber\": \"8761231677\",\n            \"privateEmail\": \"patra.tobias@hotmail.com\",\n            \"workEmail\": \"patra.tobias@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Alan Conway\",\n            \"id\": 3,\n            \"joinDate\": \"2025-06-26\",\n            \"phoneNumber\": \"44117123151\",\n            \"privateEmail\": \"alan.conway@gmail.com\",\n            \"workEmail\": \"alan.conway@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Ali Jonathan\",\n            \"id\": 4,\n            \"joinDate\": \"2025-09-26\",\n            \"phoneNumber\": \"92132561725\",\n            \"privateEmail\": \"ali.jonathan@yahoo.com\",\n            \"workEmail\": \"ali.jonathan@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Robert Tan\",\n            \"id\": 5,\n            \"joinDate\": \"2025-09-26\",\n            \"phoneNumber\": \"6281249812525\",\n            \"privateEmail\": \"robert.tan@gmail.co.id\",\n            \"workEmail\": \"robert.tan@trabea.co.id\"\n        }\n    ],\n    \"page\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"totalElements\": 5,\n        \"totalPages\": 1\n    }\n}"
+						},
+						{
+							"name": "200 with Valid Sort Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer?sort=joinDate",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "joinDate"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:52:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"fullname\": \"Patra Tobias\",\n            \"id\": 2,\n            \"joinDate\": \"2023-11-26\",\n            \"phoneNumber\": \"8761231677\",\n            \"privateEmail\": \"patra.tobias@hotmail.com\",\n            \"workEmail\": \"patra.tobias@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Peter Johnson\",\n            \"id\": 1,\n            \"joinDate\": \"2024-11-26\",\n            \"phoneNumber\": \"1234567821\",\n            \"privateEmail\": \"peter.johnson@gmail.com\",\n            \"workEmail\": \"peter.johnson@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Alan Conway\",\n            \"id\": 3,\n            \"joinDate\": \"2025-06-26\",\n            \"phoneNumber\": \"44117123151\",\n            \"privateEmail\": \"alan.conway@gmail.com\",\n            \"workEmail\": \"alan.conway@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Ali Jonathan\",\n            \"id\": 4,\n            \"joinDate\": \"2025-09-26\",\n            \"phoneNumber\": \"92132561725\",\n            \"privateEmail\": \"ali.jonathan@yahoo.com\",\n            \"workEmail\": \"ali.jonathan@trabea.co.id\"\n        },\n        {\n            \"fullname\": \"Robert Tan\",\n            \"id\": 5,\n            \"joinDate\": \"2025-09-26\",\n            \"phoneNumber\": \"6281249812525\",\n            \"privateEmail\": \"robert.tan@gmail.co.id\",\n            \"workEmail\": \"robert.tan@trabea.co.id\"\n        }\n    ],\n    \"page\": {\n        \"size\": 10,\n        \"number\": 0,\n        \"totalElements\": 5,\n        \"totalPages\": 1\n    }\n}"
+						},
+						{
+							"name": "400 with Invalid Sort Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer?sort=invalidsort",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "invalidsort"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:51:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"No property 'invalidsort' found for type 'PartTimeEmployee'\",\n    \"message\": \"Property Reference Error\",\n    \"status\": \"400 BAD_REQUEST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Part Timer Placeholder by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDE0ODE5NCwiZXhwIjoxNzY0MjM0NTk0LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.gvpPO9dhahismcBEWXl0ks9Fo2eg5Hk9tJ8hWXH2_Ds",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/part-timer/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with Exist Part Timer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:46:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Peter\",\n    \"id\": 1,\n    \"lastEducation\": \"MASTER\",\n    \"lastName\": \"Johnson\",\n    \"onGoingEducation\": \"DOCTORATE\",\n    \"personalEmail\": \"peter.johnson@gmail.com\",\n    \"phoneNumber\": \"1234567821\"\n}"
+						},
+						{
+							"name": "404 with Unexist Part Timer Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/9999",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"9999"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:44:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Part Time Employee with id 9999 is not exist\",\n    \"message\": \"Resource Not Found\",\n    \"status\": \"404 NOT_FOUND\"\n}"
+						},
+						{
+							"name": "400 with Part Timer Id as String",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/stringPartTimer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"stringPartTimer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 09:45:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Invalid number format: For input string: \\\"stringPartTimer\\\"\",\n    \"message\": \"Number Format Error\",\n    \"status\": \"400 BAD_REQUEST\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add New Part Timer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDE1MjM4NywiZXhwIjoxNzY0MjM4Nzg3LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.H21PSyXUrzGXv_Ri-nOnBVucks5pophMne6UyDxwDFM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED_UNIQUE\",\r\n    \"phoneNumber\":\"0812303031\",\r\n    \"lastEducation\":\"BACHELOR\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/part-timer",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with All Valid Field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 10:12:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fullname\": \"Mocked Mocked\",\n    \"id\": 6,\n    \"joinDate\": \"2025-11-26\",\n    \"phoneNumber\": \"0812303030\",\n    \"privateEmail\": \"EMAIL_MOCKED\",\n    \"workEmail\": \"MockedMocked@trabea.co.id\"\n}"
+						},
+						{
+							"name": "200 with All Mandatory Field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 10:13:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fullname\": \"Mocked Mocked\",\n    \"id\": 6,\n    \"joinDate\": \"2025-11-26\",\n    \"phoneNumber\": \"0812303030\",\n    \"privateEmail\": \"EMAIL_MOCKED\",\n    \"workEmail\": \"MockedMocked@trabea.co.id\"\n}"
+						},
+						{
+							"name": "200 with Duplicate Full Name and Prefix WorkMail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED_UNIQUE\",\r\n    \"phoneNumber\":\"0812303031\",\r\n    \"lastEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:23:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fullname\": \"Mocked Mocked\",\n    \"id\": 8,\n    \"joinDate\": \"2025-11-27\",\n    \"phoneNumber\": \"0812303031\",\n    \"privateEmail\": \"EMAIL_MOCKED_UNIQUE\",\n    \"workEmail\": \"MockedMocked_dbb4\"\n}"
+						},
+						{
+							"name": "400 with Education Enum Invalid Value",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELORATE\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Nov 2025 10:16:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Cannot deserialize value of type `com.iglo.trabea.education.Education` from String \\\"BACHELORATE\\\": not one of the values accepted for Enum class: [MASTER, DOCTORATE, JUNIOR, ELEMENTARY, BACHELOR, HIGH]\\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #146] (through reference chain: com.iglo.trabea.partTimeEmployee.dto.PartTimeEmployeeFormRequest[\\\"lastEducation\\\"])\",\n    \"message\": \"HTTP Message Not Readable\",\n    \"status\": \"400 BAD_REQUEST\"\n}"
+						},
+						{
+							"name": "409 with Duplicate Phone Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:20:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Violation of UNIQUE KEY constraint 'UKoq17pyj5p9jrbyqryt9sev0qc'. Cannot insert duplicate key in object 'dbo.PartTimeEmployees'. The duplicate key value is (0812303030).\",\n    \"message\": \"Data Access Exception\",\n    \"status\": \"409 CONFLICT\"\n}"
+						},
+						{
+							"name": "409 with Duplicate Email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303031\",\r\n    \"lastEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:21:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Violation of UNIQUE KEY constraint 'UKtabw6oaxtlhuemxb76q7b9geu'. Cannot insert duplicate key in object 'dbo.PartTimeEmployees'. The duplicate key value is (EMAIL_MOCKED).\",\n    \"message\": \"Data Access Exception\",\n    \"status\": \"409 CONFLICT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Part Timer By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMDU3NywiZXhwIjoxNzY0Mjk2OTc3LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.g7MU2CpqeQDQlcTZPFJac8Fts4g2hLuxpDjtTKRSvmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Mocked_Edited\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED_UNIQUE_#2342\",\r\n    \"phoneNumber\":\"081230308\",\r\n    \"lastEducation\":\"JUNIOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/part-timer/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with All Valid Field & Params",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked_Edited\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"JUNIOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:30:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fullname\": \"Mocked_Edited Mocked\",\n    \"id\": 1,\n    \"joinDate\": \"2024-11-27\",\n    \"phoneNumber\": \"0812303030\",\n    \"privateEmail\": \"EMAIL_MOCKED\",\n    \"workEmail\": \"peter.johnson@trabea.co.id\"\n}"
+						},
+						{
+							"name": "404 with Non Exist Part Time Id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked_Edited\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"JUNIOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:30:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Part Time Employee with id 6 is not exist\",\n    \"message\": \"Resource Not Found\",\n    \"status\": \"404 NOT_FOUND\"\n}"
+						},
+						{
+							"name": "409 with Duplicate Phone Number",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked_Edited\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"0812303030\",\r\n    \"lastEducation\":\"JUNIOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"2"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:32:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Violation of UNIQUE KEY constraint 'UKoq17pyj5p9jrbyqryt9sev0qc'. Cannot insert duplicate key in object 'dbo.PartTimeEmployees'. The duplicate key value is (0812303030).\",\n    \"message\": \"Data Access Exception\",\n    \"status\": \"409 CONFLICT\"\n}"
+						},
+						{
+							"name": "409 with Duplicate Personal Email",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Mocked_Edited\",\r\n    \"lastName\":\"Mocked\",\r\n    \"personalEmail\":\"EMAIL_MOCKED\",\r\n    \"phoneNumber\":\"081230308\",\r\n    \"lastEducation\":\"JUNIOR\",\r\n    \"onGoingEducation\":\"BACHELOR\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/part-timer/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"2"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:34:55 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Violation of UNIQUE KEY constraint 'UKtabw6oaxtlhuemxb76q7b9geu'. Cannot insert duplicate key in object 'dbo.PartTimeEmployees'. The duplicate key value is (EMAIL_MOCKED).\",\n    \"message\": \"Data Access Exception\",\n    \"status\": \"409 CONFLICT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Part Timer Contact Information by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdWguZGFuaXNAdHJhYmVhLmNvLmlkIiwiaXNzIjoiVHJhYmVhIiwiaWF0IjoxNzY0MjExMTc0LCJleHAiOjE3NjQyOTc1NzQsInJvbGUiOiJNYW5hZ2VyIiwid29ya0VtYWlsIjoibXVoLmRhbmlzQHRyYWJlYS5jby5pZCJ9.gy_kUUI1Hrso62B3i6ceWQuFHptWMIADdDgACSCWM_E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/part-timer/contact/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer",
+								"contact",
+								"9999"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 with Exist Part Timer Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/part-timer/contact/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"contact",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:40:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fullname\": \"Mocked_Edited Mocked\",\n    \"personalEmail\": \"EMAIL_MOCKED\",\n    \"phoneNumber\": \"0812303056\",\n    \"workEmail\": \"peter.johnson@trabea.co.id\"\n}"
+						},
+						{
+							"name": "404 with Non Exist Part Timer Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/part-timer/contact/9999",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"contact",
+										"9999"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:40:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Part Time Employee with id 9999 is not exist\",\n    \"message\": \"Resource Not Found\",\n    \"status\": \"404 NOT_FOUND\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Education",
+			"item": [
+				{
+					"name": "Get All Education Level",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMDU3NywiZXhwIjoxNzY0Mjk2OTc3LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.g7MU2CpqeQDQlcTZPFJac8Fts4g2hLuxpDjtTKRSvmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/education",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"education"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 All Valid Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/education",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:26:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"enumerated\": \"ELEMENTARY\",\n        \"label\": \"Elementary School (SD)\"\n    },\n    {\n        \"enumerated\": \"JUNIOR\",\n        \"label\": \"Junior High School (SMP)\"\n    },\n    {\n        \"enumerated\": \"HIGH\",\n        \"label\": \"High School (SMA)\"\n    },\n    {\n        \"enumerated\": \"BACHELOR\",\n        \"label\": \"University - Bachelor (Kuliah - lulusan S1)\"\n    },\n    {\n        \"enumerated\": \"MASTER\",\n        \"label\": \"University - Master (Kuliah - lulusan S2)\"\n    },\n    {\n        \"enumerated\": \"DOCTORATE\",\n        \"label\": \"University - Doctorate (Kuliah - lulusan S3)\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get All Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMDU3NywiZXhwIjoxNzY0Mjk2OTc3LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.g7MU2CpqeQDQlcTZPFJac8Fts4g2hLuxpDjtTKRSvmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/role",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 All Valid Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/role",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"role"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:27:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Administrator\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Manager\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"PartTimer\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Work Shift",
+			"item": [
+				{
+					"name": "Get All Work Shift",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbm5hLmRhbmlzQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMDU3NywiZXhwIjoxNzY0Mjk2OTc3LCJyb2xlIjoiQWRtaW5pc3RyYXRvciIsIndvcmtFbWFpbCI6ImFubmEuZGFuaXNAdHJhYmVhLmNvLmlkIn0.g7MU2CpqeQDQlcTZPFJac8Fts4g2hLuxpDjtTKRSvmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/work-shift",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"work-shift"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 All Valid Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/work-shift",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"work-shift"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:27:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"endTime\": \"12:00:00\",\n        \"id\": 1,\n        \"startTime\": \"08:00:00\"\n    },\n    {\n        \"endTime\": \"16:00:00\",\n        \"id\": 2,\n        \"startTime\": \"12:00:00\"\n    },\n    {\n        \"endTime\": \"20:00:00\",\n        \"id\": 3,\n        \"startTime\": \"16:00:00\"\n    },\n    {\n        \"endTime\": \"00:00:00\",\n        \"id\": 4,\n        \"startTime\": \"20:00:00\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Request Token With All Valid Field",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n   {\r\n        \"username\":\"aldi.danis@trabea.co.id\",\r\n        \"password\":\"Placeholder\",\r\n        \"role\":\"PartTimer\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/create-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"create-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 With All Valid Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"username\":\"peter.johnson@trabea.co.id\",\r\n        \"password\":\"Placeholder\",\r\n        \"role\":\"PartTimer\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/create-token",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"create-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 02:45:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlci5qb2huc29uQHRyYWJlYS5jby5pZCIsImlzcyI6IlRyYWJlYSIsImlhdCI6MTc2NDIxMTUwMSwiZXhwIjoxNzY0Mjk3OTAxLCJyb2xlIjoiUGFydFRpbWVyIiwid29ya0VtYWlsIjoicGV0ZXIuam9obnNvbkB0cmFiZWEuY28uaWQifQ.q4HiZ7AAN4ePMF9U1-BfgtJ47FFjQHk37lapEeZUU0Y\"\n}"
+						},
+						{
+							"name": "401 With Exist User and Wrong Role",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n   {\r\n        \"username\":\"aldi.danis@trabea.co.id\",\r\n        \"password\":\"Placeholder\",\r\n        \"role\":\"PartTimer\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/create-token",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"create-token"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:29:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Authentication token is not found\",\n    \"message\": \"Insufficient AuthenticationFull authentication is required to access this resource\",\n    \"status\": \"401 UNAUTHORIZED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Request to the Authorized Route",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/part-timer/contact/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"part-timer",
+								"contact",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "403 with Weak Authorization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/part-timer/contact/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"contact",
+										"1"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:31:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Insufficient permissions to access this resource\",\n    \"message\": \"Access Denied\",\n    \"status\": \"403 FORBIDDEN\"\n}"
+						},
+						{
+							"name": "401 with No Authentication",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/part-timer/contact/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"part-timer",
+										"contact",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Nov 2025 03:31:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": \"Authentication token is not found\",\n    \"message\": \"Insufficient AuthenticationFull authentication is required to access this resource\",\n    \"status\": \"401 UNAUTHORIZED\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "admin_key",
+			"value": ""
+		},
+		{
+			"key": "manager_key",
+			"value": ""
+		},
+		{
+			"key": "partTimer_key",
+			"value": ""
+		}
+	]
+}
