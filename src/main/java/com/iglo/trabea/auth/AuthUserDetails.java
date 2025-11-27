@@ -20,7 +20,6 @@ public class AuthUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Extract all roles from UserRole collection and convert to GrantedAuthority
         return user.getUserRoles().stream()
                 .map(userRole -> new SimpleGrantedAuthority("ROLE_" + userRole.getRole().getName()))
                 .collect(Collectors.toList());

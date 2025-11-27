@@ -3,7 +3,6 @@ package com.iglo.trabea.error;
 
 import com.iglo.trabea.error.exception.*;
 import org.springframework.dao.DataAccessException;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.core.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -148,7 +147,6 @@ public class ErrorExceptionHandler {
             errorsMap.put(fieldError.getField(), fieldError.getDefaultMessage());
         });
 
-        //<Map<String, String>>builder() 
         ErrorMessageResponse<Map<String, String>> errorMessageResponse = ErrorMessageResponse.<Map<String, String>>builder().status(httpStatus)
                 .message("Method Argument Not Valid")
                 .errors(errorsMap)

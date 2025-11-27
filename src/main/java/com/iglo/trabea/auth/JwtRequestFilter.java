@@ -33,7 +33,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 String role = jwtService.extractRole(token);
 
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                    // Load user with role validation using the role from token
                     UserDetails userDetails = userDetailsService.loadUserByUsernameAndRole(username, role);
                     
                     if (jwtService.isTokenValid(token, userDetails)) {

@@ -11,7 +11,7 @@ public class WorkingDayValidator implements ConstraintValidator<WorkDay, LocalDa
     @Override
     public boolean isValid(LocalDate value, ConstraintValidatorContext context) {
         if (value == null) {
-            return true; // let @NotNull handle null if needed
+            return true;
         }
 
         DayOfWeek day = value.getDayOfWeek();
