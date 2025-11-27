@@ -76,7 +76,7 @@ public class WorkSchedulesService {
      }
 
      public Page<ScheduleResponse> findAllWorkScheduleRequests(Pageable pageable) {
-            return workSchedulesRepository.findByApprovalStatusPendingAndManagerNull(pageable)
+            return workSchedulesRepository.findByApprovalStatus(ApprovalStatus.PENDING, pageable)
                     .map(workScheduleMapper::toScheduleResponse);
      }
 

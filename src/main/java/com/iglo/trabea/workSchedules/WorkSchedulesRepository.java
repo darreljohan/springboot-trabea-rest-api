@@ -11,8 +11,7 @@ import java.util.List;
 public interface WorkSchedulesRepository extends JpaRepository<WorkSchedule, Integer> {
     List<WorkSchedule> findByWorkDateBetween(LocalDate startDate, LocalDate endDate);
 
-    @Query(value = "SELECT * FROM WorkSchedules WHERE IsApproved = 'PENDING' AND ManagerId IS NULL", nativeQuery = true)
-    Page<WorkSchedule> findByApprovalStatusPendingAndManagerNull(Pageable pageable);
+    Page<WorkSchedule> findByApprovalStatus(ApprovalStatus approvalStatus, Pageable pageable);
 
     List<WorkSchedule> findByPartTimeEmployee_IdAndWorkDate(Integer partTimeEmployeeId, LocalDate workDate);
     List<WorkSchedule> findByPartTimeEmployee_IdAndWorkDateAndApprovalStatus(Integer partTimeEmployeeId, LocalDate workDate, ApprovalStatus approvalStatus);
