@@ -38,7 +38,7 @@ public class PartTimeEmployeeService {
 
         if(userRepository.existsByWorkEmail(email)){
             String hash = Integer.toHexString(UUID.randomUUID().hashCode()).substring(0, 4);
-            email = partTimeEmployeeFormRequest.getEmailPrefix()+"_"+hash;
+            email = partTimeEmployeeFormRequest.getEmailPrefix()+"_"+hash+"@trabea.co.id";
         }
 
         User user = User.builder()
